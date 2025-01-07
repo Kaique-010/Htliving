@@ -46,6 +46,7 @@ MIDDLEWARE = [
 ]
 CORS_ORIGIN_ALLOW_ALL = True 
 CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
     "https://Leokaique10.pythonanywhere.com",
 ]
 
@@ -58,7 +59,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'front/dist'),  # Ajuste para o caminho correto do seu build React
+            os.path.join(BASE_DIR, 'ht-dietfront/dist'), 
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -119,9 +120,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# Defina o diretório onde o Django deve procurar os arquivos estáticos do React
+
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'front/dist/assets'),  # Caminho para os arquivos estáticos do React
+    os.path.join(BASE_DIR, 'front/ht-diet/dist/assets'), 
 ]
 
 # Para produção, você vai querer coletar os arquivos estáticos
