@@ -127,7 +127,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Diretórios adicionais de arquivos estáticos
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'templates/assets'),  # Ajuste conforme o caminho real
-    os.path.join(BASE_DIR, 'templates/dist'),    # Ajuste conforme o caminho real
+    os.path.join(BASE_DIR, 'templates/dist'), 
+    os.path.join(BASE_DIR, 'front', 'dist', 'assets'),# Ajuste conforme o caminho real
 ]
 
 # Exibindo a variável TEMPLATES DIR fora da lista STATICFILES_DIRS
