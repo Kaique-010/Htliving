@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'app',  # Certifique-se de que isso esteja aqui
     'rest_framework',
     'gemini_api', 
     'corsheaders',
