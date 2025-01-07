@@ -59,7 +59,7 @@ ROOT_URLCONF = 'app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # Aponta para a pasta templates
+        'DIRS': [os.path.join(BASE_DIR, 'templates/dist')],  
         'APP_DIRS': True,
         'OPTIONS': {'context_processors': ['django.template.context_processors.request']},
     },
@@ -113,7 +113,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'templates/assets')  # Aponta para os arquivos estáticos
+    os.path.join(BASE_DIR, 'templates/assets'), 
+    os.path.join(BASE_DIR, 'templates/dist'),
+    os.path.join(BASE_DIR, 'templates'),
+    
 ]
 
 # Para produção, você vai querer coletar os arquivos estáticos
