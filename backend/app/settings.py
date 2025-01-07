@@ -57,8 +57,8 @@ ROOT_URLCONF = 'app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-         'DIRS': [
-            os.path.join(BASE_DIR, 'frontend/build'),  # Caminho para a pasta 'build' do React
+        'DIRS': [
+            os.path.join(BASE_DIR, 'front/dist'),  # Ajuste para o caminho correto do seu build React
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -117,16 +117,15 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Defina o prefixo para as URLs estáticas
 STATIC_URL = '/static/'
 
-# Diretório onde os arquivos estáticos serão armazenados
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# Diretórios adicionais onde os arquivos estáticos podem ser encontrados
+# Defina o diretório onde o Django deve procurar os arquivos estáticos do React
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'front/ht-diet/dist/assets'),  # Caminho para os arquivos estáticos do React
+    os.path.join(BASE_DIR, 'front/dist/assets'),  # Caminho para os arquivos estáticos do React
 ]
+
+# Para produção, você vai querer coletar os arquivos estáticos
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
