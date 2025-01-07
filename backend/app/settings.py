@@ -61,7 +61,7 @@ CORS_ALLOWED_ORIGINS = [
 APPEND_SLASH = False
 
 
-ROOT_URLCONF = 'backend.urls'
+ROOT_URLCONF = 'appurls'
 
 TEMPLATES = [
     {
@@ -79,7 +79,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'backend.wsgi.application'
+WSGI_APPLICATION = 'app.wsgi.application'
 
 
 # Database
