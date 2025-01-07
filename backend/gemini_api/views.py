@@ -77,3 +77,9 @@ class GeminiPromptApiView(APIView):
                 {'error': 'Erro ao chamar a API Gemini', 'details': str(e)},
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
+
+
+from django.views.generic import TemplateView
+
+class IndexView(TemplateView):
+    template_name = 'index.html'
