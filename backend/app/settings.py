@@ -118,7 +118,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+# Direciona para o diretório da build do React (dist)
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'front/ht-diet/dist/assets'),
+]
+
+# Serve os arquivos estáticos do React
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
