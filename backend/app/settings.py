@@ -47,7 +47,7 @@ MIDDLEWARE = [
 CORS_ORIGIN_ALLOW_ALL = True 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
-    "https://Leokaique10.pythonanywhere.com",
+    "https://LeonardoSousa.pythonanywhere.com",
 ]
 
 APPEND_SLASH = False
