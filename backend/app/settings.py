@@ -59,18 +59,9 @@ ROOT_URLCONF = 'app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            os.path.join(BASE_DIR, 'ht-dietfront/dist'), 
-        ],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # Aponta para a pasta templates
         'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
+        'OPTIONS': {'context_processors': ['django.template.context_processors.request']},
     },
 ]
 
@@ -121,9 +112,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'front/ht-diet/dist/assets'), 
+    os.path.join(BASE_DIR, 'templates/assets')  # Aponta para os arquivos estáticos
 ]
 
 # Para produção, você vai querer coletar os arquivos estáticos

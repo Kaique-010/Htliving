@@ -8,7 +8,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('gemini_api.urls')),  # Incluir as rotas da app gemini_api
     # Aqui está o ajuste para a view do index.html
-    path('', TemplateView.as_view(template_name='index.html')),  
+    path('', TemplateView.as_view(template_name='index.html'), name='index'), 
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
