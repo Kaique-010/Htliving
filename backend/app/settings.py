@@ -115,16 +115,16 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.1/howto/static-files/
+# Defina o prefixo para as URLs estáticas
+STATIC_URL = '/static/'
 
-# Direciona para o diretório da build do React (dist)
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'front/ht-diet/dist/assets'),
-]
-
-# Serve os arquivos estáticos do React
+# Diretório onde os arquivos estáticos serão armazenados
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Diretórios adicionais onde os arquivos estáticos podem ser encontrados
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'front/ht-diet/dist/assets'),  # Caminho para os arquivos estáticos do React
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
