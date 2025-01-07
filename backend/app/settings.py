@@ -2,6 +2,7 @@
 from pathlib import Path
 import os
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -59,9 +60,16 @@ ROOT_URLCONF = 'app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates/dist')],  
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
-        'OPTIONS': {'context_processors': ['django.template.context_processors.request']},
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',  # Adicione esta linha
+                'django.contrib.messages.context_processors.messages',  # E esta linha
+            ],
+        },
     },
 ]
 
@@ -109,15 +117,19 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 STATIC_URL = '/static/'
 
+# Defina o diretório de arquivos estáticos para o deploy
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Diretórios adicionais de arquivos estáticos
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'templates/assets'), 
-    os.path.join(BASE_DIR, 'templates/dist'),
-    os.path.join(BASE_DIR, 'templates'),
-    
+    os.path.join(BASE_DIR, 'templates/assets'),  # Ajuste conforme o caminho real
+    os.path.join(BASE_DIR, 'templates/dist'),    # Ajuste conforme o caminho real
 ]
+
+# Exibindo a variável TEMPLATES DIR fora da lista STATICFILES_DIRS
+print("TEMPLATES DIR:", os.path.join(BASE_DIR, 'templates'))
 
 # Para produção, você vai querer coletar os arquivos estáticos
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
