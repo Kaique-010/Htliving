@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import api from "../services/api";
 import {useNavigate} from "react-router-dom";
-import "./DietForm.css"; // Importando o CSS externo
+import "./DietForm.css"; 
 
 const DietForm = ({onResult}) => {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ const DietForm = ({onResult}) => {
     restrictions: "",
   });
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false); // Estado para gerenciar o carregamento
+  const [loading, setLoading] = useState(false); 
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -38,7 +38,7 @@ const DietForm = ({onResult}) => {
       return;
     }
 
-    const prompt = `
+    const prompt = `  
       Crie uma dieta e um treino personalizados, para uma pessoa chamada ${
         formData.name
       }, que tem ${formData.height} cm de altura e pesa ${
@@ -54,7 +54,7 @@ const DietForm = ({onResult}) => {
 
     const model = "gemini-1.5-flash";
 
-    setLoading(true); // Ativar o estado de carregamento
+    setLoading(true); 
 
     try {
       const response = await api.post("/gemini-prompt/", {prompt, model});
@@ -68,7 +68,7 @@ const DietForm = ({onResult}) => {
     } catch (err) {
       setError("Erro ao enviar os dados. Verifique e tente novamente.");
     } finally {
-      setLoading(false); // Desativar o estado de carregamento
+      setLoading(false); 
     }
   };
 
